@@ -67,12 +67,13 @@ class MainActivity : AppCompatActivity() {
             val number = random.nextInt(60)
             numbers.add(number + 1)
 
+
             if (numbers.size == qtd) {
                 break
             }
         }
-
-        txtResult.text = numbers.joinToString(" - ")
+        val numbersSorted = numbers.sorted()
+        txtResult.text = numbersSorted.joinToString(" - ")
 
         val editor = prefs.edit()
         editor.putString("result", txtResult.text.toString())
